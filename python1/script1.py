@@ -20,4 +20,4 @@ favAnimal = sys.argv[4]
 #This is my favorite animal
 #print('My favorite animal:' , favAnimal )
 
-print('My name:' + myName + '\n' + 'My color:' + favColor + '\n' + 'My favorite activity:' +  favActivity + '\n' + 'My favorite animal:' + favAnimal) 
+print('My name:' + myName + '\n' + 'My color:' + favColor + '\n' + 'My favorite activity:' +  favActivity + '\n' + 'My favorite animal:' + favAnimal)
