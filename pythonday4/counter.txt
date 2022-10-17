@@ -1,0 +1,3 @@
+total lines:	120
+character count:	7920
+average line length:	66.0
