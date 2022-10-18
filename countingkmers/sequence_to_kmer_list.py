@@ -28,11 +28,12 @@ def sequence_to_kmer_list(sequence, kmer_length):
     kmers_list = list()
 
     ## begin your code
-
-
-
-
     
+    kcount = len(sequence) - (kmer_length+1)
+    
+    for position in range(len(sequence)-kmer_length):
+        kmer = sequence[position:(position+kmer_length)]
+        kmers_list.append(kmer)
     ## end your code
 
     return kmers_list
