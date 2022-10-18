@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os, sys
 
@@ -22,20 +22,19 @@ from fastq_file_to_sequence_list import *
 ##                             ...       }
 
 
-def count_kmers(kmer_list):
+def count_kmers(kmer_list):                     #were counting the f'ing kmers...
 
     kmer_count_dict = dict()
-
+    
     ##################
     ## Step 2:
     ## begin your code
-
-
-
-
-
-
-
+    
+    for kmer in kmer_list:
+        if kmer in kmer_count_dict:
+            kmer_count_dict[kmer] += 1
+        else:
+            kmer_count_dict[kmer] = 1
 
     ## end your code
     ################
@@ -68,20 +67,17 @@ def main():
     ## Step 1:
     ## begin your code, populate 'all_kmers' list with the
     ## collection of kmers from all sequences
-
-
-
-
-
-
-
-
+    
+    for sequence in seq_list:
+        all_kmers.extend(sequence_to_kmer_list(sequence, kmer_length))
+        
     ## end your code
     #######################
 
     kmer_count_dict = count_kmers(
-        all_kmers
-    )  # see step 2 above. You implement this. :-)
+            all_kmers
+            )
+    # see step 2 above. You implement this. :-)
 
     unique_kmers = list(kmer_count_dict.keys())
 
@@ -90,19 +86,12 @@ def main():
     ## (Note, you can run and test without first implementing Step 3)
     ## begin your code       hint: see the built-in 'sorted' method documentation
 
-
-
-
-
-
-
-
-
+    sorted_kmers = sorted(kmer_count_dict, key=kmer_count_dict.get, reverse = True)
 
     ## end your code
 
     ## printing the num top kmers to show
-    top_kmers_show = unique_kmers[0:num_top_kmers_show]
+    top_kmers_show = sorted_kmers[0:num_top_kmers_show]
 
     for kmer in top_kmers_show:
         print("{}: {}".format(kmer, kmer_count_dict[kmer]))
