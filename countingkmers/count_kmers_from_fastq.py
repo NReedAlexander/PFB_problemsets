@@ -2,6 +2,8 @@
 
 import os, sys
 
+sys.dont_write_bytecode = True
+
 from sequence_to_kmer_list import *
 from fastq_file_to_sequence_list import *
 
